@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Adding bootstrap here -->
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Daber 5edma</h1>
+        <p>
+            <a asp-controller="CompanyWeb" asp-action="Index" class="btn btn-primary my-2">Company</a>
+            <a asp-controller="CandidatWeb" asp-action="Index" class="btn btn-secondary my-2">Candidat</a>
+        </p>
+    </div>
+</section>
+
+<div class="row">
+    @for (int i = 1; i < 6; i++)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <p class="card-text">This is a job offer @(i)</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-controller="JobOfferWeb" asp-action="Details" asp-route-id="@i" class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
